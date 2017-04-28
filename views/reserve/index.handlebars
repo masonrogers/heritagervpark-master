@@ -1,0 +1,61 @@
+<h2 class="page-header">Reservations</h2> {{> thumbnails}}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Current Reservations for {{user.username}}</h3> </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Premium RV Site</th>
+                <th>Laundry Access</th>
+                <th>Wifi</th>
+                <th>Breakfast</th>
+                <th>Pool</th>
+              </tr>
+            </thead>
+            <tbody>
+                {{# each reserves}}
+                    <tr>
+                        <td>{{this.username}}</td>
+                        <td>{{this.premium}}</td>
+                        <td>{{this.laundry}}</td>
+                        <td>{{this.wifi}}</td>
+                        <td>{{this.breakfast}}</td>
+                        <td>{{this.pool}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Make New Reservation</h3> </div>
+    <div class="panel-body">
+        <form method="post" action="/">
+            <p>Select Reservation Services:</p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" name="laundry"> $5 Laundry Access </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" name="premium"> $35 Premium RV Site </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" name="wifi"> $3 Wifi Access </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" name="breakfast"> $20 Breakfast Buffet </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" name="pool"> $5 Pool Access </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Reservation</button>
+        </form>
+    </div>
+</div>
